@@ -13,10 +13,10 @@
           upgrade: yes
 
 - name: Install Weave Net as Container Network Interface
-  shell: curl -L git.io/weave -o /usr/local/bin/weave
-
-- name: Changing permissions of Weave Net Binary at /usr/local/bin/weave
-  file: dest=/usr/local/bin/weave mode=a+x
+  get_url:
+    url: git.io/weave
+    dest: /usr/local/bin/weave
+    mode: 0755
 
 - name: Install kubernetes
   apt:
