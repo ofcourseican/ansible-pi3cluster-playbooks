@@ -7,6 +7,4 @@
   become_method: sudo
   roles:
     - basic
-    when: hosts is defined
     - reboot
-    when: hosts is defined

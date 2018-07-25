@@ -1,6 +1,3 @@
-- name: Disable swapfile
-  shell: dphys-swapfile swapoff && dphys-swapfile uninstall && update-rc.d dphys-swapfile remove
-
 - name: Enabling cgroups
   shell: sed -i '/cgroup_memory=1$/!s/$/ cgroup_cpuset=1 cgroup_memory=1/' /boot/cmdline.txt
 
