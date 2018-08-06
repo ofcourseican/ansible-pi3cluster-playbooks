@@ -20,8 +20,13 @@
 
 - name: Install kubernetes
   apt:
-           name: "{{ item }}"
-           force: yes
-           state: present
+    name: "{{ item }}"
+    force: yes
+    state: present
   with_items:
           kubeadm
+
+- name: Install nfs-common
+  apt:
+    name: nfs-common
+    state: present

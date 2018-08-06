@@ -23,3 +23,13 @@
 
 - name: Restart hostname
   shell: "hostnamectl set-hostname {{ inventory_hostname }}"
+
+- name: Load Kernel Modules
+  shell: "modprobe ip_vs_wrr ip_vs_sh ip_vs ip_vs_rr"
+
+- name: Change entry in /etc/hosts
+  lineinfile:
+           dest: /etc/hosts
+           regexp: '^127\.0\.1\.1[ \t](.*)'
+           line: '127.0.1.1 {{ inventory_hostname }}'
+           state: present
