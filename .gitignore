@@ -1,3 +1,4 @@
 hosts
+cluster-hosts
 *.retry
 *.tar.gz

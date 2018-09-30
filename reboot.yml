@@ -1,8 +1,0 @@
-- name: Rebooting {{ hosts }} ...
-  hosts: '{{ hosts }}'
-  gather_facts: yes
-  become: true
-  become_method: sudo
-  roles:
-    - reboot
-
